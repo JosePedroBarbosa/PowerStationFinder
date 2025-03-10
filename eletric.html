@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">~
+    <link rel="stylesheet" href="style.css">
+     <!-- Bootstrap CSS -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <title>Power Stations Finder</title>
+</head>
+<body>
+
+    <div class="eletric-container">
+        <div class="eletric-header bg-dark">
+          <h1 id="user-title">Search Power Stations</h1>
+        </div>
+
+        <div class="p-3">
+          <form id="eletric-form">
+            <label class="pb-2">Insert Latitude:</label>
+            <input type="text" id="eletric-lat" class="form-control me-2 mb-2" placeholder="38.72225" required>
+            <label class="pb-2">Insert Longitude:</label>
+            <input type="text" id="eletric-lon" class="form-control me-2 mb-2" placeholder="-9.13934" required>
+            <label class="pb-2">Insert Max results:</label>
+            <input type="text" id="max-results" class="form-control me-2 mb-2" placeholder="10" required min="1" max="20">
+            <button type="submit" class="btn btn-success btn-lg mt-4" id="submit-btn">Submit</button>
+            <button type="button" id="getLocationButton" class="btn btn-dark mt-4 btn-lg">Get my current location</button>
+          </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-map">
+            <div id="myMap"></div>
+        </div>
+        <div class="col-table">
+            <table id="myTable" class="table table-striped table-bordered table-hover text-center shadow-lg">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Country</th>
+                        <th>Latitude</th>
+                        <th>Longitude</th>
+                        <th>Address</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="js/scripts.js"></script>
+</body>
+</html> 
